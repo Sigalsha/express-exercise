@@ -1,14 +1,13 @@
 var express = require('express');
-var bodyParser = require('body-parser');   //add this line
+var bodyParser = require('body-parser');  
 const queryapi = require('./queryapi'); 
 const pathapi = require('./pathapi'); 
 var request = require('request');
 const weather = require('./weather');
 var app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));   //add this line
-app.use(bodyParser.json());  //add this line
-
+app.use(bodyParser.urlencoded({ extended: false }));  
+app.use(bodyParser.json()); 
 app.use('/', queryapi);
 app.use('/', pathapi);
 app.use('/', weather);
